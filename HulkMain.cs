@@ -39,19 +39,21 @@ namespace HulkProject
 
             string ApplicationMessage = HulkApps.Application();
             string RegistrationMessage = HulkApps.Registration();
+            string LoginMessage = HulkApps.Login();
+            string SearchMessage = HulkApps.SearchField();
 
 
 
 
-            if (!ApplicationMessage.Contains("ERROR") && (!RegistrationMessage.Contains("ERROR")))
+            if (!ApplicationMessage.Contains("ERROR") && (!RegistrationMessage.Contains("ERROR") && (!LoginMessage.Contains("ERORR") && (!SearchMessage.Contains("ERROR")))))
             {
                 subject = "Passed!!! " + subject;
-                body = "Test je prošao" + "\n" + ApplicationMessage + RegistrationMessage;
+                body = "Test je prošao" + "\n" + ApplicationMessage + RegistrationMessage + LoginMessage + SearchMessage;
             }
             else
             {
                 subject = "Failed!!! " + subject;
-                body = ApplicationMessage + RegistrationMessage;
+                body = ApplicationMessage + RegistrationMessage + LoginMessage + SearchMessage;
             }
 
         
